@@ -121,6 +121,7 @@ rec {
         { inherit (v.config.deployment) targetEnv targetPort targetHost encryptedLinksTo storeKeysOnMachine alwaysActivate owners keys hasFastConnection;
           nixosRelease = v.config.system.nixos.release or v.config.system.nixosRelease or (removeSuffix v.config.system.nixosVersionSuffix v.config.system.nixosVersion);
           publicIPv4 = v.config.networking.publicIPv4;
+          privateIPv4 = v.config.networking.privateIPv4;
         }
       (map
         (f: f v.config)
